@@ -1,0 +1,8 @@
+/* Import template CSS files so Vite builds them into public/build */
+@import "templatemo-chain-app-dev.css";
+@import "animated.css";
+@import "owl.css";
+@import "fontawesome.css";
+
+/* You can add custom overrides below */
+/* e.g. body { font-family: 'Roboto', sans-serif; } */
