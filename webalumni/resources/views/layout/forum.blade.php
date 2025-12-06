@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading">
-            <h4>Check What <em>The Clients Say</em> About Our App Dev</h4>
+            <h4>Forum</h4>
             <img src="assets/images/heading-line-dec.png" alt="">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>
           </div>

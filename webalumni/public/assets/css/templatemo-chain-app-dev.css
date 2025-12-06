@@ -905,6 +905,9 @@ Banner Style
   padding: 250px 120px 150px 120px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .main-banner:after {
@@ -921,7 +924,10 @@ Banner Style
 }
 
 .main-banner .left-content {
-  margin-right: 15px;
+  margin-right: 5px;
+  width: 100%;
+  z-index: 2;
+  position: relative;
 }
 
 .main-banner .left-content h2 {
@@ -949,12 +955,19 @@ Banner Style
 
 .main-banner .right-image {
   text-align: center;
-  position: relative;
-  z-index: 20;
+  position: absolute;
+  right: 8rem;
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  height: 100%;
 }
 
 .main-banner .right-image img {
-  max-width: 710px;
+  max-width: 100%;
+  height: auto;
 }
 
 .main-banner .left-content .white-button a {
@@ -998,7 +1011,7 @@ Services Style
 
 .services:before {
   content: '';
-  background-image: url(../images/services-right-dec.png);
+  background-image: url(assets/images/services-right-dec.png);
   background-repeat: no-repeat;
   position: absolute;
   right: 0;
@@ -1976,6 +1989,7 @@ responsive
     line-height: 70px;
     font-size: 50px;
     margin-bottom: 20px;
+    overflow: hidden;
   }
 
   .main-banner .left-content p {

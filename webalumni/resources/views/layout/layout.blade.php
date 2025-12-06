@@ -53,49 +53,33 @@ https://templatemo.com/tm-570-chain-app-dev
     @include('layout.header')
 </header>
 
-
+<div class="col-lg-12">
   <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-6 align-self-center">
-              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <h2>Get The Latest App From App Stores</h2>
-                    <p>Chain App Dev is an app landing page HTML5 template based on Bootstrap v5.1.3 CSS layout provided by TemplateMo, a great website to download free CSS templates.</p>
-                  </div>
-                  <div class="col-lg-12">
-                    <div class="white-button first-button scroll-to-section">
-                      <a href="#contact">Free Quote <i class="fab fa-apple"></i></a>
-                    </div>
-                    <div class="white-button scroll-to-section">
-                      <a href="#contact">Free Quote <i class="fab fa-google-play"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <img src="assets/images/slider-dec.png" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- Bagian Teks (Kiri) -->
+    <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+      <h2>Selamat Datang para Alumni, Mahasiswa dan Dosen Matana</h2>
+      <p>Website ini dirancang untuk menghubungkan mahasiswa aktif, alumni dan dosen Matana.</p>
+      <div class="white-button first-button scroll-to-section">
+        <a href="#services">Ada apa saja?<i class="fa fa-arrow-right"></i></a>
       </div>
     </div>
+
+    <!-- Gambar (Kanan - di belakang teks) -->
+    <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+      <img src="assets/images/slider-dec.png" alt="">
+    </div>
+
   </div>
+</div>
 
   <div id="services" class="services section">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h4>Amazing <em>Services &amp; Features</em> for you</h4>
+            <h4>Apa yang bisa kamu lakukan di Website ini?</h4>
             <img src="assets/images/heading-line-dec.png" alt="">
-            <p>If you need the greatest collection of HTML templates for your business, please visit <a rel="nofollow" href="https://www.toocss.com/" target="_blank">TooCSS</a> Blog. If you need to have a contact form PHP script, go to <a href="https://templatemo.com/contact" target="_parent">our contact page</a> for more information.</p>
+      
           </div>
         </div>
       </div>
@@ -105,40 +89,30 @@ https://templatemo.com/tm-570-chain-app-dev
         <div class="col-lg-3">
           <div class="service-item first-service">
             <div class="icon"></div>
-            <h4>App Maintenance</h4>
-            <p>You are not allowed to redistribute this template ZIP file on any other website.</p>
+            <h4>Life Updater</h4>
+            <p>Berikan pembaruan terbaru tentang kehidupan Anda dengan mudah dan cepat.</p>
             <div class="text-button">
-              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+              <a href="#">Selengkapnya<i class="fa fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
         <div class="col-lg-3">
           <div class="service-item second-service">
             <div class="icon"></div>
-            <h4>Rocket Speed of App</h4>
-            <p>You are allowed to use the Chain App Dev HTML template. Feel free to modify or edit this layout.</p>
+            <h4>Job Vacancy</h4>
+            <p>Cari pekerjaan baru dengan mudah menggunakan koneksi anda.</p>
             <div class="text-button">
-              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+              <a href="#">Selengkapnya<i class="fa fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
         <div class="col-lg-3">
           <div class="service-item third-service">
             <div class="icon"></div>
-            <h4>Multi Workflow Idea</h4>
-            <p>If this template is beneficial for your work, please support us <a rel="nofollow" href="https://paypal.me/templatemo" target="_blank">a little via PayPal</a>. Thank you.</p>
+            <h4>Forum</h4>
+            <p>Diskusikan berbagai topik dan berbagi informasi dengan mahasiswa aktif dan dosen-dosen matana.</p>
             <div class="text-button">
-              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="service-item fourth-service">
-            <div class="icon"></div>
-            <h4>24/7 Help &amp; Support</h4>
-            <p>Lorem ipsum dolor consectetur adipiscing elit sedder williamsburg photo booth quinoa and fashion axe.</p>
-            <div class="text-button">
-              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+              <a href="#">Selengkapnya<i class="fa fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -146,7 +120,7 @@ https://templatemo.com/tm-570-chain-app-dev
     </div>
   </div>
 
-  <div id="about" class="about-us section">
+  <!-- <div id="about" class="about-us section">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 align-self-center">
@@ -279,7 +253,7 @@ https://templatemo.com/tm-570-chain-app-dev
                       </div>
                     </div>
                   </div>
-                </div> 
+                </div>  -->
                 <!-- <div class="col-lg-5">
                   <ul class="nacc">
                     <li class="active">
@@ -335,7 +309,7 @@ https://templatemo.com/tm-570-chain-app-dev
       </div>
     </div>
   </div> -->
-    <li>
+    <!-- <li>
         <div class="gradient-button">
             <a href="/forum"><i class="fa fa-sign-in-alt"></i> Forum </a>
         </div>
@@ -414,13 +388,13 @@ https://templatemo.com/tm-570-chain-app-dev
         </div>
       </div>
     </div>
-  </div> 
+  </div>  -->
 
   <footer id="newsletter">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
-          <div class="section-heading">
+          <!-- <div class="section-heading">
             <h4>Join our mailing list to receive the news &amp; latest trends</h4>
           </div>
         </div>
@@ -436,7 +410,7 @@ https://templatemo.com/tm-570-chain-app-dev
                 <fieldset>
                   <button type="submit" class="main-button">Subscribe Now <i class="fa fa-angle-right"></i></button>
                 </fieldset>
-              </div>
+              </div> -->
             </div>
           </form>
         </div>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,4 @@ Route::get('/forum', function () {
     return view('layout.forum');
 });
 
-Route::get('/login', function () {
-    return view('layout.login');
-});
+Route::resource('register', RegisterController::class);
