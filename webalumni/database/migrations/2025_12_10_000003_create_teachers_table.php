@@ -8,16 +8,18 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('teachers', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('nip');
-            $table->string('department');
-            $table->string('phone');
-            $table->string('office');
-            $table->string('specialization');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('teachers')) {
+            Schema::create('teachers', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('user_id')->constrained()->onDelete('cascade');
+                $table->string('nip');
+                $table->string('department');
+                $table->string('phone');
+                $table->string('office');
+                $table->string('specialization');
+                $table->timestamps();
+            });
+        }
     }
 
     public function down(): void
