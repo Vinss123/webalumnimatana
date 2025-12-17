@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ForumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,7 @@ Route::get('/', function () {
     return view('layout.beranda');
 });
 
-Route::get('/forum', function () {
-    return view('layout.forum');
-});
+Route::get('/forum', [ForumController::class, 'index'])->name('forum');
 
 // Public Auth Routes
 Route::get('/daftar', [AuthController::class, 'registrationForm'])->name('daftar');

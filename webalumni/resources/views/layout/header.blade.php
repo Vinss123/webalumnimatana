@@ -14,7 +14,7 @@
             <ul class="nav">
               <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
               <li class="scroll-to-section"><a href="{{ url('/#forum') }}">Information</a></li>
-              <li class="scroll-to-section"><a href="#about">Forum</a></li>
+              <li class="scroll-to-section"><a href="/forum">Forum</a></li>
               @auth
                 <li class="scroll-to-section"><a href="/profil">Profil</a></li>
                 <li class="scroll-to-section"><a href="/alumni">List</a></li>
@@ -26,35 +26,54 @@
             </ul>
 
             <!-- Profile Picture & Auth Section -->
-            <div class="header-auth flex-end
-               items-center gap-4">
+            <div class="header-auth" style="display: none; align-items: center; gap: 16px; margin-left: auto;">
               @auth
-                <div class="relative group">
+                <div style="position: relative;">
                   @if(Auth::user()->profile_picture)
                     <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}" alt="{{ Auth::user()->name }}"
-                      class="w-10 h-10 rounded-full cursor-pointer object-cover border-2 border-indigo-500">
+                      style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #6366f1; cursor: pointer;">
                   @else
-                    <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center cursor-pointer">
-                      <i class="fas fa-user text-white"></i>
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: #6366f1; display: flex; align-items: center; justify-content: center; cursor: pointer; color: white;">
+                      <i class="fas fa-user"></i>
                     </div>
                   @endif
                   
                   <!-- Dropdown Menu -->
-                  <div class="hidden group-hover:block absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-50">
-                    <a href="/profil" class="block px-4 py-2 text-slate-700 hover:bg-slate-100 rounded-t-lg">
+                  <div style="position: absolute; right: 0; margin-top: 8px; width: 192px; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 50; display: none;" class="dropdown-menu-auth">
+                    <a href="/profil" style="display: block; padding: 8px 16px; color: #374151; border-radius: 8px 8px 0 0; text-decoration: none;" onmouseover="this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.backgroundColor='transparent'">
                       <i class="fas fa-user mr-2"></i>Profil Saya
                     </a>
-                    <a href="/logout" class="block px-4 py-2 text-rose-600 hover:bg-rose-50 rounded-b-lg">
+                    <a href="/logout" style="display: block; padding: 8px 16px; color: #dc2626; border-radius: 0 0 8px 8px; text-decoration: none;" onmouseover="this.style.backgroundColor='#fee2e2'" onmouseout="this.style.backgroundColor='transparent'">
                       <i class="fas fa-sign-out-alt mr-2"></i>Logout
                     </a>
                   </div>
                 </div>
               @else
-                <div class="gradient-button">
-                  <a href="/login"><i class="fa fa-sign-in-alt"></i> Sign In Now</a>
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 6px; padding: 8px 16px;">
+                  <a href="/login" style="text-decoration: none; color: white; font-weight: 600;"><i class="fa fa-sign-in-alt"></i> Sign In Now</a>
                 </div>
               @endauth
             </div>
+            
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                const authDiv = document.querySelector('[style*="position: relative"]');
+                if (authDiv) {
+                  const img = authDiv.querySelector('img') || authDiv.querySelector('div[style*="background: #6366f1"]');
+                  const dropdown = authDiv.querySelector('.dropdown-menu-auth');
+                  if (img && dropdown) {
+                    img.addEventListener('click', function() {
+                      dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+                    });
+                    document.addEventListener('click', function(e) {
+                      if (!authDiv.contains(e.target)) {
+                        dropdown.style.display = 'none';
+                      }
+                    });
+                  }
+                }
+              });
+            </script>
 
             <a class='menu-trigger'>
                 <span>Menu</span>
