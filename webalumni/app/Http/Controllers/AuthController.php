@@ -120,7 +120,7 @@ class AuthController extends Controller
             );
         } elseif ($role === 'teacher') {
             $validated = $request->validate([
-                'nip' => 'required|string|unique:teachers,nip,' . $user->id . ',user_id',
+                'nip' => 'required|string|unique:teacher,nip,' . $user->id . ',user_id',
                 'department' => 'required|string',
                 'phone' => 'required|string',
                 'office' => 'required|string',

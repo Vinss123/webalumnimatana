@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-   Schema::table('users', function (Blueprint $table) {
-    if (!Schema::hasColumn('users', 'role')) {
-        $table->string('role')->after('email');
-    }
-});
-
+    Schema::create('study_programs', function (Blueprint $table) {
+        $table->id();
+        $table->string('code')->nullable()->unique();
+        $table->string('name')->nullable();
+        $table->string('faculty')->nullable();
+    });
 
     }
 
@@ -25,8 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['role', 'profile_picture', 'data_completed']);
-        });
+        Schema::dropIfExists('study_programs');
     }
 };

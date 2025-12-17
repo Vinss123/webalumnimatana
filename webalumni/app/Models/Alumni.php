@@ -9,6 +9,9 @@ class Alumni extends Model
 {
     use HasFactory;
     
+    // TAMBAHKAN INI: Karena nama tabel di database adalah 'alumni' (tunggal)
+    protected $table = 'alumni';
+    
     protected $fillable = [
         'user_id',
         'nim',
@@ -18,7 +21,7 @@ class Alumni extends Model
         'company_name',
         'job_position',
         'salary_range',
-        'phone',
+        'linkedin_profile', 
     ];
 
     public function user()
