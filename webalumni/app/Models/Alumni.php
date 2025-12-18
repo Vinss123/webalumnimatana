@@ -9,6 +9,8 @@ class Alumni extends Model
 {
     use HasFactory;
     
+    // TAMBAHKAN INI: Karena nama tabel di database adalah 'alumni' (tunggal)
+    protected $table = 'alumni';
     protected $primaryKey = 'user_id';
     public $incrementing = false;
     protected $keyType = 'bigint';
@@ -22,13 +24,14 @@ class Alumni extends Model
         'company_name',
         'job_position',
         'salary_range',
-        'phone',
+        'linkedin_profile', 
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+}
 
     public function tracerStudy()
     {

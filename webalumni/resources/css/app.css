@@ -1,8 +1,244 @@
-/* Import template CSS files so Vite builds them into public/build */
+/* ===============================
+   BOOTSTRAP (WAJIB PALING ATAS)
+================================ */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* ===============================
+   TEMPLATE CSS
+================================ */
 @import "templatemo-chain-app-dev.css";
 @import "animated.css";
 @import "owl.css";
 @import "fontawesome.css";
 
-/* You can add custom overrides below */
-/* e.g. body { font-family: 'Roboto', sans-serif; } */
+/* ===============================
+   GLOBAL OVERRIDES
+================================ */
+body {
+    background-color: #f8fafc;
+}
+
+/* Utility: truncate text to 3 lines */
+.text-truncate-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* ===============================
+   JOB VACANCIES UI
+================================ */
+
+/* HEADER */
+.job-header h2 {
+    font-weight: 700;
+}
+
+.job-header p {
+    font-size: 0.95rem;
+}
+
+/* CARD LOWONGAN */
+.job-card {
+    border: none;
+    border-radius: 16px;
+    transition: all 0.35s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    overflow: hidden;
+}
+
+.job-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+}
+
+/* BADGE */
+.job-card .badge {
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+}
+
+/* BUTTON ANIMATION */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(13,110,253,0.4);
+}
+
+.btn-outline-primary:hover {
+    transform: scale(1.05);
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* SEARCH CARD */
+.search-card {
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* EMPTY STATE */
+.empty-state i {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* ===============================
+   FORM
+================================ */
+.form-card {
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    animation: fadeUp 0.5s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* INPUT FOCUS */
+.form-control:focus,
+.form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.15rem rgba(13,110,253,.25);
+}
+
+/* BUTTON SUCCESS */
+.btn-success:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(25,135,84,0.4);
+}
+
+/* ===============================
+   MY JOBS PAGE
+================================ */
+.stat-card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.15);
+}
+
+/* TABS */
+.job-tabs .nav-link {
+    border-radius: 12px;
+    margin-right: 6px;
+    transition: all 0.3s ease;
+}
+
+.job-tabs .nav-link.active {
+    background: #0d6efd;
+    color: #fff;
+}
+
+.job-tabs .nav-link:hover {
+    transform: translateY(-2px);
+}
+
+/* TABLE */
+.job-table {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.job-table thead th {
+    border: none;
+    font-size: 0.85rem;
+    color: #6c757d;
+    text-transform: uppercase;
+}
+
+.job-table tbody tr {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.job-table tbody tr:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+/* ACTION BUTTON */
+.job-table .btn:hover {
+    transform: scale(1.15);
+}
+
+/* ===============================
+   SHOW PAGE
+================================ */
+.job-description {
+    line-height: 1.7;
+    font-size: 0.95rem;
+    color: #334155;
+}
+/* ===============================
+   FIX HEADER GLOBAL
+================================ */
+.header-area {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #6c74e6; /* samakan dengan homepage */
+    z-index: 9999;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav .nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Supaya konten tidak ketiban header */
+body {
+    padding-top: 100px;
+}
+
+/* ===============================
+   FIX FOOTER GLOBAL
+================================ */
+footer {
+    background: #0b1f3a;
+    color: #ffffff;
+    padding-top: 40px;
+    margin-top: 80px;
+}
+
+footer a {
+    color: #dbeafe;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffffff;
+}

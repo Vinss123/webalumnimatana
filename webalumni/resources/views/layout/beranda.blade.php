@@ -45,7 +45,7 @@
             <h4>Job Vacancy</h4>
             <p>Cari pekerjaan baru dengan mudah menggunakan koneksi anda.</p>
             <div class="text-button">
-              <a href="#">Selengkapnya<i class="fa fa-arrow-right"></i></a>
+              <a href="{{ route('jobs.index') }}">Selengkapnya<i class="fa fa-arrow-right"></i></a>
             </div>
           </div>
 

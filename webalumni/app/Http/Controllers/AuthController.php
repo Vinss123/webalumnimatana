@@ -78,6 +78,73 @@ class AuthController extends Controller
     }
 
     // Tampilkan form pengumpulan data sesuai role
+    public function dataForm($role)
+    {
+        $user = Auth::user();
+        if ($user->role !== $role) {
+            abort(403);
+        }
+
+        return view("user.data.{$role}", compact('user'));
+    }
+
+    // Simpan data berdasarkan role
+    public function storeData(Request $request, $role)
+    {
+        $user = Auth::user();
+        if ($user->role !== $role) {
+            abort(403);
+        }
+
+        if ($role === 'alumni') {
+            $validated = $request->validate([
+                'nim' => 'required|string',
+                'graduation_year' => 'required|integer|min:2000|max:' . date('Y'),
+                'major' => 'required|string',
+                'current_job' => 'required|in:bekerja,tidak_bekerja,melanjutkan_studi',
+                'company_name' => 'required_if:current_job,bekerja|string',
+                'job_position' => 'required_if:current_job,bekerja|string',
+                'salary_range' => 'string|nullable',
+                'phone' => 'required|string',
+            ]);
+
+            Alumni::updateOrCreate(
+                ['user_id' => $user->id],
+                $validated
+            );
+        } elseif ($role === 'student') {
+            $validated = $request->validate([
+                'nim' => 'required|string|unique:students,nim,' . $user->id . ',user_id',
+                'major' => 'required|string',
+                'semester' => 'required|integer|min:1|max:8',
+                'phone' => 'required|string',
+                'address' => 'required|string',
+            ]);
+
+            Student::updateOrCreate(
+                ['user_id' => $user->id],
+                $validated
+            );
+        } elseif ($role === 'teacher') {
+            $validated = $request->validate([
+                'nip' => 'required|string|unique:teacher,nip,' . $user->id . ',user_id',
+                'department' => 'required|string',
+                'phone' => 'required|string',
+                'office' => 'required|string',
+                'specialization' => 'required|string',
+            ]);
+
+            Teacher::updateOrCreate(
+                ['user_id' => $user->id],
+                $validated
+            );
+        }
+
+        $user->update(['data_completed' => true]);
+
+        return redirect('/profil')->with('success', 'Data Anda berhasil disimpan');
+    }
+
     public function profil()
     {
         $user = Auth::user();
