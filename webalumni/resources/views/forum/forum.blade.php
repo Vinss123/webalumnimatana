@@ -26,7 +26,7 @@
         }
         
         html, body {
-            background: linear-gradient(135deg, #667eea 0%, #667eea 100%) !important;
+            background: linear-gradient(135deg, #c4c4c4ff 0%, #c4c4c4ff 100%) !important;
             min-height: 100vh;
             margin: 0;
             padding: 0;
@@ -404,6 +404,9 @@
     @include('layout.header')
 </header>
 
+@extends('layout.layout_forum')
+
+@section('contentforum')
 <div id="forum-app" class="forum-container">
 @verbatim
     <div class="feed-wrapper" style="max-width: 800px;">
@@ -682,8 +685,7 @@
     </div>
 </div>
 @endverbatim
-
-@include('layout.footer')
+@endsection
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -692,6 +694,10 @@
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 <script>
+    // Configure axios
+    axios.defaults.withCredentials = true;
+    axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    
     const { createApp } = Vue;
 
     const app = {

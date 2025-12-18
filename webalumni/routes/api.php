@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Forum Routes - Protected (Read, Write, Update, Delete, Likes)
-Route::middleware('auth.session')->group(function () {
+Route::middleware('auth')->group(function () {
     // Posts
     Route::get('/posts', [PostController::class, 'index']);
     Route::get('/posts/{id}', [PostController::class, 'show']);

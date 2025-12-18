@@ -31,10 +31,10 @@ class Alumni extends Model
     {
         return $this->belongsTo(User::class);
     }
-}
 
     public function tracerStudy()
     {
         return $this->hasOne(TracerStudy::class, 'alumni_id', 'user_id');
     }
 }
+

@@ -43,9 +43,16 @@ class PostController extends Controller
             ], 422);
         }
 
+        // Ensure user is authenticated
+        if (!auth()->check()) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Anda harus login untuk membuat post',
+            ], 401);
+        }
+
         $post = new Post();
-        // Gunakan auth()->id() jika user login, atau 1 (guest user) jika tidak
-        $post->user_id = auth()->id() ?? 1;
+        $post->user_id = auth()->id();
         $post->content = $validated['content'] ?? null;
 
         // Handle image upload

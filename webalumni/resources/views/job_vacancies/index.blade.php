@@ -17,7 +17,7 @@
   <style>
     /* Job Board Specific Styles */
     :root {
-      --primary-color: #4e54c8;
+      --primary-color: #ffffffff;
       --secondary-color: #8f94fb;
       --accent-color: #ff6b6b;
       --dark-color: #2d3436;
@@ -382,7 +382,7 @@
 <body>
 
   <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+  <!-- <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -450,7 +450,9 @@
         </div>
       </div>
     </div>
-  </header>
+  </header> -->
+
+  @extends('layout.header')
   <!-- ***** Header Area End ***** -->
 
   <!-- Hero Section -->

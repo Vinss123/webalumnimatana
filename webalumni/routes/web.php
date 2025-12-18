@@ -100,7 +100,6 @@ Route::resource('student', 'App\Http\Controllers\StudentController')->middleware
 
 // Teacher resource routes (for future expansion)
 Route::resource('teacher', 'App\Http\Controllers\TeacherController')->middleware('auth');
-<<<<<<< HEAD
 
 // Temporary debug route to inspect DB content for lists page
 Route::get('/debug/lists', function () {
@@ -120,5 +119,3 @@ Route::get('/debug/lists', function () {
         return response()->json(['error' => $e->getMessage()], 500);
     }
 });
-=======
->>>>>>> 73b0f65e39f629d589292b5c7a5f20464600fb00

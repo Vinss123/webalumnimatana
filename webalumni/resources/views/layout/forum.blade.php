@@ -29,7 +29,7 @@
         }
         
         html, body {
-            background: linear-gradient(135deg, #667eea 0%, #667eea 100%) !important;
+            background: linear-gradient(135deg, #ffffffff 0%, #ffffffff 100%) !important;
             min-height: 100vh;
             margin: 0;
             padding: 0;
@@ -407,6 +407,8 @@
     @include('layout.header')
 </header>
 
+@extends('layout.layout_login')
+@section('contentforum')
 <div id="forum-app" class="forum-container">
 @verbatim
     <div class="feed-wrapper" style="max-width: 800px;">
@@ -686,7 +688,7 @@
 </div>
 @endverbatim
 
-@include('layout.footer')
+@include('layout.footerlain')
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

@@ -13,7 +13,7 @@
           <!-- ***** Menu Start ***** -->
           <ul class="nav">
             <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
-            <li class="scroll-to-section"><a href="{{ url('/#forum') }}">Information</a></li>
+            <li class="scroll-to-section"><a href="/jobs">Job Vacancy</a></li>
             <li class="scroll-to-section"><a href="/forum">Forum</a></li>
             @auth
               <li class="scroll-to-section"><a href="/profil">Profil</a></li>
