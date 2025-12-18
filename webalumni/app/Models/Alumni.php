@@ -9,7 +9,7 @@ class Alumni extends Model
 {
     use HasFactory;
     
-    // TAMBAHKAN INI: Karena nama tabel di database adalah 'alumni' (tunggal)
+    // Karena nama tabel di database adalah 'alumni' (tunggal)
     protected $table = 'alumni';
     protected $primaryKey = 'user_id';
     public $incrementing = false;

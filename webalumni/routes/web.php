@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\JobVacancyController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\TracerStudyController;
+use App\Http\Controllers\JobVacancyController;
 use App\Http\Controllers\PeopleController;
 use Illuminate\Container\Attributes\DB;
 
@@ -66,26 +66,25 @@ Route::middleware('auth')->group(function () {
 // Alumni routes
 Route::resource('alumni', AlumniController::class);
 
-// Job vacancy routes, hanya untuk admin dan dosen
-// Semua user login (mahasiswa, alumni, dosen, admin) bisa lihat daftar loker
-// Semua user login bisa lihat daftar & detail loker
-// routes/web.php
-
-// Public
+// Job Vacancy Routes - PUBLIK
 Route::get('/jobs', [JobVacancyController::class, 'index'])->name('jobs.index');
-Route::get('/jobs/my-jobs', [JobVacancyController::class, 'myJobs'])->name('jobs.my_jobs'); 
-Route::get('/jobs/{id}', [JobVacancyController::class, 'show'])->name('jobs.show')->where('id', '[0-9]+');
 
-// Alumni only
-Route::middleware(['auth', 'role:alumni'])->group(function () {
+Route::middleware('auth')->group(function () {
+    // PENTING: Route /jobs/create HARUS di atas /jobs/{id}
     Route::get('/jobs/create', [JobVacancyController::class, 'create'])->name('jobs.create');
     Route::post('/jobs', [JobVacancyController::class, 'store'])->name('jobs.store');
+    
+    // My Jobs
+    Route::get('/my-jobs', [JobVacancyController::class, 'myJobs'])->name('jobs.my-jobs');
+    
+    // Edit & Delete
     Route::get('/jobs/{id}/edit', [JobVacancyController::class, 'edit'])->name('jobs.edit');
     Route::put('/jobs/{id}', [JobVacancyController::class, 'update'])->name('jobs.update');
     Route::delete('/jobs/{id}', [JobVacancyController::class, 'destroy'])->name('jobs.destroy');
-    Route::get('/my-jobs', [JobVacancyController::class, 'myJobs'])->name('jobs.my');
 });
 
+// Route dengan parameter {id} HARUS paling bawah
+Route::get('/jobs/{id}', [JobVacancyController::class, 'show'])->name('jobs.show');
 // Admin & Teacher
 Route::middleware(['auth', 'role:admin,teacher'])->group(function () {
     Route::get('/admin/jobs', [JobVacancyController::class, 'adminIndex'])->name('jobs.admin');
