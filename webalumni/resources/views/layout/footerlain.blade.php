@@ -1,29 +1,33 @@
 ﻿<style>
   .page-background-fixed {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: url('assets/images/footer-bg.png');
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-    pointer-events: none;
+    position: fixed!important;
+    bottom: 0!important;
+    left: 0!important;
+    width: 100%!important;
+    height: 100vh!important;
+    background-image: url('{{ asset("assets/images/footer-bg.png") }}')!important;
+    background-position: bottom center!important;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+    z-index: -1!important;
+    pointer-events: none!important;
   }
   
   footer#contact-us {
     background-image: none !important;
     background-color: transparent !important;
-    position: relative;
-    z-index: 10;
+    position: relative !important;
+    z-index: 10 !important;
   }
 
   .container-footer {
-    padding: 40px;
-    border-radius: 8px;
-    color: white;
+    padding: 40px!important;
+    border-radius: 8px!important;
+    color: white!important;
+  }
+
+  .container-footer img {
+    max-width: 200px!important;
   }
 </style>
 
@@ -34,8 +38,20 @@
 <div class="container-footer wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
   <div class="row">
     <div class="col-lg-3 footer-widget">
+<<<<<<< HEAD
       <img src="assets/images/logo-horizontal-white-footer.png" alt="Matana University" class="mb-6"/>
       <p><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/6P3uNLuaX7KJYjEH6">Matana University Tower, Jl. CBD Barat Kav. 1, Gading Serpong, Tangerang, Banten - 15810</a></p>
+=======
+      <img src="{{ asset('assets/images/logo-horizontal-white-footer.png') }}"
+        alt="Matana University"
+        class="mb-6"/>
+      <p>
+        <i class="fas fa-map-marker-alt"></i>
+        <a href="https://maps.app.goo.gl/6P3uNLuaX7KJYjEH6">
+          Matana University Tower, Jl. CBD Barat Kav. 1, Gading Serpong, Tangerang, Banten - 15810
+        </a>
+      </p>
+>>>>>>> c0d02b92106acfec90d9097e41e782c35024a0e9
       <p><i class="fas fa-phone"></i> <a href="tel:02129232999">021-2923-2999</a></p>
       <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/081287775999">0812-8777-5999</a></p>
       <p><i class="fas fa-envelope"></i> <a href="mailto:info@matanauniversity.ac.id">info@matanauniversity.ac.id</a></p>
