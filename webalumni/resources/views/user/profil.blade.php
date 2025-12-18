@@ -14,22 +14,22 @@
     <!-- Tracer Study Alert for Alumni -->
     @if($user->role === 'alumni')
         @php
-            $hasTracerStudy = $user->alumni && $user->alumni->tracerStudy;
+            $tracerStudy = $data && $data->tracerStudy ? $data->tracerStudy : null;
         @endphp
-        @if(!$hasTracerStudy)
-            <div class="mb-4 rounded-lg bg-warning border border-warning p-4 text-sm text-dark">
-                <div class="d-flex justify-content-between align-items-center">
+        @if(!$tracerStudy)
+            <div class="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-6">
+                <div class="flex items-start justify-between gap-4">
                     <div>
-                        <strong><i class="fas fa-exclamation-circle"></i> Penting!</strong>
-                        <p class="mb-0 mt-1">Anda belum mengisi Tracer Study. Tracer Study adalah survei wajib untuk melacak perkembangan karir Anda sebagai alumni. Silahkan isi sekarang.</p>
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fas fa-exclamation-circle text-amber-600 text-lg"></i>
+                            <strong class="text-amber-900">Penting!</strong>
+                        </div>
+                        <p class="text-sm text-amber-800 mb-0">Anda belum mengisi Tracer Study. Tracer Study adalah survei wajib untuk melacak perkembangan karir Anda sebagai alumni. Silahkan isi sekarang.</p>
                     </div>
-                    <a href="{{ route('tracer.form') }}" class="btn btn-warning btn-sm ms-3 flex-shrink-0">Isi Tracer Study</a>
+                    <a href="{{ route('tracer.form') }}" class="flex-shrink-0 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg text-sm font-semibold transition">
+                        <i class="fas fa-plus-circle"></i> Isi Tracer Study
+                    </a>
                 </div>
-            </div>
-        @else
-            <div class="mb-4 rounded-lg bg-success border border-success p-4 text-sm text-dark">
-                <strong><i class="fas fa-check-circle"></i> Tracer Study Selesai</strong>
-                <p class="mb-0 mt-1">Anda telah menyelesaikan Tracer Study pada {{ $hasTracerStudy->survey_date->format('d/m/Y') }}. <a href="{{ route('tracer.form') }}" class="text-decoration-none">Ubah jawaban</a></p>
             </div>
         @endif
     @endif
@@ -80,9 +80,6 @@
                     @case('student')
                         Mahasiswa Aktif
                         @break
-                    @case('teacher')
-                        Dosen
-                        @break
                 @endswitch
             </p>
         </div>
@@ -97,9 +94,6 @@
                         Data Alumni
                         @break
                     @case('student')
-                        Data Akademik
-                        @break
-                    @case('teacher')
                         Data Akademik
                         @break
                 @endswitch
@@ -156,13 +150,18 @@
                         
                         <!-- Tracer Study Data Section -->
                         @php
-                            $tracerStudy = $user->alumni && $user->alumni->tracerStudy ? $user->alumni->tracerStudy : null;
+                            $tracerStudy = $data && $data->tracerStudy ? $data->tracerStudy : null;
                         @endphp
                         @if($tracerStudy)
                             <div class="mt-8 border-t border-slate-200 pt-6">
-                                <h4 class="text-lg font-bold text-slate-800 mb-4">
-                                    <i class="fas fa-chart-line"></i> Data Tracer Study
-                                </h4>
+                                <div class="flex justify-between items-center mb-4">
+                                    <h4 class="text-lg font-bold text-slate-800">
+                                        <i class="fas fa-chart-line"></i> Data Tracer Study
+                                    </h4>
+                                    <a href="{{ route('tracer.form') }}" class="btn btn-sm btn-primary">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </a>
+                                </div>
                                 
                                 <div class="rounded-lg border border-blue-200 bg-blue-50 p-4 mb-4">
                                     <p class="text-sm text-blue-600">Tanggal Survei</p>

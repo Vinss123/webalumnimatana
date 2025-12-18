@@ -29,7 +29,7 @@
     </div>
     
     <!-- Footer -->
-    <div>
+    <div class="w-full">
         @include('layout.footerlain')
     </div>
 
